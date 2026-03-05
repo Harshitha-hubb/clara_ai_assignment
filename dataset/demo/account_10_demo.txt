@@ -1,0 +1,26 @@
+DEMO CALL TRANSCRIPT - Account 10
+Date: 2024-01-20
+Company: OptiDoor Garage Solutions
+Sales Rep: Alex
+
+Client: OptiDoor Garage Solutions. We install and repair residential garage doors and openers. We're in Nashville, Tennessee.
+
+Alex: Hours?
+
+Client: Monday through Friday 8am to 6pm. Saturday 9am to 3pm. Central time.
+
+Alex: Emergencies?
+
+Client: Garage door stuck open and customer can't secure their home, spring failure making door inoperable, door off track and won't close — basically anything where the home can't be secured.
+
+Alex: Routing?
+
+Client: On-call tech is Chris Navarro at 615-555-7731. 30 seconds. Owner backup is Pat Murphy at 615-555-7732.
+
+Alex: Software?
+
+Client: ServiceTitan.
+
+Alex: Address?
+
+Client: 2211 Nolensville Pike, Nashville, TN 37211.

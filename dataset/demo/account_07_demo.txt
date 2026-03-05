@@ -1,0 +1,26 @@
+DEMO CALL TRANSCRIPT - Account 07
+Date: 2024-01-19
+Company: GreenScape Landscaping
+Sales Rep: Alex
+
+Client: GreenScape Landscaping. We're in Austin, Texas. Lawn maintenance, irrigation, landscaping design.
+
+Alex: Hours?
+
+Client: Monday through Saturday, 7am to 6pm Central.
+
+Alex: After-hours emergencies?
+
+Client: Irrigation system failures flooding a property, broken sprinkler lines, major storm damage to client property needing immediate assessment.
+
+Alex: Routing?
+
+Client: On-call is Bobby Hernandez at 512-555-2241. 30 seconds. Backup is the dispatcher Maria at 512-555-2242.
+
+Alex: Software?
+
+Client: Jobber.
+
+Alex: Address?
+
+Client: 5112 Burnet Road, Austin, TX 78756.

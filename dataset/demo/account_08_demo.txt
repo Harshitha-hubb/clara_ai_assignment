@@ -1,0 +1,26 @@
+DEMO CALL TRANSCRIPT - Account 08
+Date: 2024-01-19
+Company: PristineClean Commercial
+Sales Rep: Alex
+
+Client: PristineClean Commercial Cleaning. We serve office buildings and medical facilities in Chicago, Illinois.
+
+Alex: Hours?
+
+Client: Operations run 24/7 but admin is Monday through Friday 9am to 5pm Central.
+
+Alex: Emergencies?
+
+Client: Biohazard cleanup requests, medical facility spill response, flooded office needing immediate water extraction.
+
+Alex: Routing?
+
+Client: Operations manager Kevin Park at 312-555-9901. No timeout limit — let it ring. If no answer, text is better, but the agent can't text so just take a message.
+
+Alex: Software?
+
+Client: Swept (janitorial software).
+
+Alex: Address?
+
+Client: 225 W. Wacker Drive, Suite 400, Chicago, IL 60606.

@@ -1,0 +1,32 @@
+ONBOARDING CALL TRANSCRIPT - Account 03
+Date: 2024-01-24
+Company: ComfortZone HVAC
+Onboarding Rep: Jamie
+
+Jamie: Hours confirmed Monday through Friday 8am to 5pm Eastern?
+
+Client: Yes. We are adding a Saturday on-call but it's informal, not full office hours. Don't advertise Saturday hours.
+
+Jamie: Got it. Emergency routing — 404-555-7722 primary, Carol at 404-555-7723 backup?
+
+Client: Carol left. New dispatch manager is Phil Washington at 404-555-7724. Keep same timeout.
+
+Jamie: Updated. Custom greeting?
+
+Client: "Thank you for calling ComfortZone HVAC, keeping Atlanta comfortable year-round. How may I help you?"
+
+Jamie: Transfer message?
+
+Client: "Please hold while I connect you with our on-call HVAC technician."
+
+Jamie: Any AI disclosure preference?
+
+Client: If asked, say "I'm a virtual assistant for ComfortZone HVAC." Don't volunteer it.
+
+Jamie: ServiceTitan still the CRM?
+
+Client: Yes. If caller mentions a service agreement number, capture it.
+
+Jamie: Timezone Eastern — America/New_York?
+
+Client: Correct.

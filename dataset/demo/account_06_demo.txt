@@ -1,0 +1,26 @@
+DEMO CALL TRANSCRIPT - Account 06
+Date: 2024-01-18
+Company: SkyHigh Roofing
+Sales Rep: Alex
+
+Client: SkyHigh Roofing, Denver Colorado. Residential roofing, gutters, storm damage.
+
+Alex: Hours?
+
+Client: Monday through Friday 7am to 5pm. Mountain time.
+
+Alex: Emergencies?
+
+Client: Active roof leak during rain causing interior damage, severe storm damage leaving structure exposed, hail damage assessment calls after major storms.
+
+Alex: Routing?
+
+Client: On-call estimator Ryan Walsh at 720-555-6612. 30 seconds. Fallback owner Lisa Park 720-555-6613.
+
+Alex: Software?
+
+Client: AccuLynx.
+
+Alex: Address?
+
+Client: 3302 Downing Street, Denver, CO 80205.

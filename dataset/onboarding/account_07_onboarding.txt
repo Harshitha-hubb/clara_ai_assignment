@@ -1,0 +1,32 @@
+ONBOARDING CALL TRANSCRIPT - Account 07
+Date: 2024-01-26
+Company: GreenScape Landscaping
+Onboarding Rep: Jamie
+
+Jamie: Hours Monday through Saturday 7am to 6pm Central?
+
+Client: Correct.
+
+Jamie: Bobby Hernandez 512-555-2241 primary, Maria dispatcher 512-555-2242 backup, 30 seconds?
+
+Client: Maria's last name is Reyes. Maria Reyes. Same number.
+
+Jamie: Got it. Greeting?
+
+Client: "Thank you for calling GreenScape Landscaping, Austin's outdoor specialists. This is the GreenScape assistant, how may I help you?"
+
+Jamie: Any special data to capture?
+
+Client: Clients often have a property ID in our system. If they mention it, grab that number.
+
+Jamie: Jobber is still the software?
+
+Client: Yes.
+
+Jamie: AI disclosure?
+
+Client: "I'm an automated assistant for GreenScape Landscaping." If they want a person, offer to take a message.
+
+Jamie: Timezone America/Chicago?
+
+Client: Yes, Central time.

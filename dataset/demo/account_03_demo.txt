@@ -1,0 +1,32 @@
+DEMO CALL TRANSCRIPT - Account 03
+Date: 2024-01-17
+Company: ComfortZone HVAC
+Sales Rep: Alex
+
+Alex: Tell me about ComfortZone HVAC.
+
+Client: We do heating and cooling for residential clients in the Atlanta area. Installations, maintenance contracts, and repairs.
+
+Alex: Hours?
+
+Client: Monday through Friday 8am to 5pm. Eastern time.
+
+Alex: Emergency situations?
+
+Client: No AC in extreme heat above 95 degrees, no heat when temps below 35, carbon monoxide alerts from HVAC-related detectors, system causing smoke or burning smell.
+
+Alex: Routing?
+
+Client: On-call tech line is 404-555-7722. Timeout 30 seconds. Fallback is dispatch manager Carol at 404-555-7723.
+
+Alex: Non-emergency after-hours?
+
+Client: Standard message taking. Name and number.
+
+Alex: Software?
+
+Client: ServiceTitan.
+
+Alex: Address?
+
+Client: 881 Peachtree Industrial Blvd, Norcross, GA 30092.

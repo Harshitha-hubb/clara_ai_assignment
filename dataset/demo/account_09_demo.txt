@@ -1,0 +1,26 @@
+DEMO CALL TRANSCRIPT - Account 09
+Date: 2024-01-20
+Company: AquaClear Pool Services
+Sales Rep: Alex
+
+Client: AquaClear Pool Services. Residential pool maintenance, repair, and chemical services. San Diego, California.
+
+Alex: Hours?
+
+Client: Monday through Friday 7am to 5pm Pacific. Saturday 8am to noon.
+
+Alex: Emergencies?
+
+Client: Pool pump failure in extreme heat posing algae bloom risk, chemical imbalance causing illness, equipment malfunction that could damage pool structure.
+
+Alex: Routing?
+
+Client: Service lead Jake Torres at 619-555-4421. 30 seconds. Backup: owner Sandra Wells at 619-555-4422.
+
+Alex: Software?
+
+Client: Skimmer.
+
+Alex: Address?
+
+Client: 4400 Ruffin Road, San Diego, CA 92123.

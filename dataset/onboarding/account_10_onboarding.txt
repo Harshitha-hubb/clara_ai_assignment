@@ -1,0 +1,32 @@
+ONBOARDING CALL TRANSCRIPT - Account 10
+Date: 2024-01-27
+Company: OptiDoor Garage Solutions
+Onboarding Rep: Jamie
+
+Jamie: Hours Monday through Friday 8am to 6pm, Saturday 9am to 3pm Central?
+
+Client: Correct.
+
+Jamie: Chris Navarro 615-555-7731 primary, Pat Murphy 615-555-7732 backup, 30 seconds?
+
+Client: All correct.
+
+Jamie: Greeting?
+
+Client: "Thank you for calling OptiDoor Garage Solutions, Nashville's garage door specialists. How can I help you today?"
+
+Jamie: For emergency calls where home security is compromised, anything specific to collect?
+
+Client: Caller name, address, whether they're home alone, and if the door is fully open or partially stuck. Also whether they have a manual lock on the door they can use as a temporary measure.
+
+Jamie: ServiceTitan still?
+
+Client: Yes. Capture warranty number if they mention it.
+
+Jamie: AI disclosure?
+
+Client: "I'm a virtual assistant for OptiDoor Garage Solutions." Be honest if pressed.
+
+Jamie: Timezone America/Chicago?
+
+Client: Yes, Central.

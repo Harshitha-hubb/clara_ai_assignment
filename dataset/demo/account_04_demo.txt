@@ -1,0 +1,28 @@
+DEMO CALL TRANSCRIPT - Account 04
+Date: 2024-01-17
+Company: Voltage Masters Electric
+Sales Rep: Alex
+
+Alex: Tell me about your electrical business.
+
+Client: Voltage Masters Electric, residential and commercial electrical work, based in Seattle, Washington.
+
+Alex: Hours?
+
+Client: Monday through Friday, 7:30am to 5:30pm. Pacific time.
+
+Alex: Emergencies?
+
+Client: Complete power outages to a home or business, electrical fires or burning smell from panels, exposed wiring hazards, flooded electrical panels, anything that poses immediate safety risk.
+
+Alex: Routing?
+
+Client: Primary on-call is electrician Tommy Park at 206-555-3310. 30 second timeout. Backup is the owner Greg Larson at 206-555-3311. If neither answers, collect info and tell them we'll dispatch within the hour.
+
+Alex: Software?
+
+Client: ServiceTrade.
+
+Alex: Address?
+
+Client: 1540 15th Ave W, Seattle, WA 98119.

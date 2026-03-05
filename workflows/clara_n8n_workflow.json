@@ -1,0 +1,204 @@
+{
+  "name": "Clara Answers Pipeline (Gemini)",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "demo-call",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-pipeline-a",
+      "name": "Webhook: Demo Call",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 300],
+      "webhookId": "demo-call-webhook"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "onboarding-call",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-pipeline-b",
+      "name": "Webhook: Onboarding Call",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 700],
+      "webhookId": "onboarding-call-webhook"
+    },
+    {
+      "parameters": {
+        "jsCode": "const body = $input.first().json.body || $input.first().json;\nif (!body.transcript) throw new Error('Missing required field: transcript');\nif (!body.account_id) throw new Error('Missing required field: account_id');\nreturn [{ json: { transcript: body.transcript, account_id: body.account_id, source_file: body.source_file || 'unknown', received_at: new Date().toISOString() } }];"
+      },
+      "id": "validate-a",
+      "name": "Validate Input A",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [480, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const body = $input.first().json.body || $input.first().json;\nif (!body.transcript) throw new Error('Missing required field: transcript');\nif (!body.account_id) throw new Error('Missing required field: account_id');\nif (!body.v1_memo) throw new Error('Missing required field: v1_memo');\nreturn [{ json: { transcript: body.transcript, account_id: body.account_id, v1_memo: typeof body.v1_memo === 'string' ? JSON.parse(body.v1_memo) : body.v1_memo, source_file: body.source_file || 'unknown', received_at: new Date().toISOString() } }];"
+      },
+      "id": "validate-b",
+      "name": "Validate Input B",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [480, 700]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent?key={{ $env.GEMINI_API_KEY }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [{ "name": "Content-Type", "value": "application/json" }]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"contents\": [{\n    \"parts\": [{\n      \"text\": \"You are an expert at extracting structured business configuration data from sales demo call transcripts for a voice AI answering service.\\n\\nExtract ALL available information from the transcript below and return ONLY a valid JSON object matching the schema exactly.\\n\\nRULES:\\n- NEVER hallucinate or infer values not explicitly stated\\n- Use null for any field not mentioned\\n- Use empty arrays [] for list fields with no data\\n- Capture exact phone numbers, names, and addresses as stated\\n- Flag anything ambiguous in questions_or_unknowns\\n\\nSCHEMA:\\n{\\n  \\\"account_id\\\": \\\"{{ $json.account_id }}\\\",\\n  \\\"company_name\\\": \\\"<string|null>\\\",\\n  \\\"business_hours\\\": { \\\"days\\\": \\\"<string|null>\\\", \\\"start\\\": \\\"<string|null>\\\", \\\"end\\\": \\\"<string|null>\\\", \\\"timezone\\\": \\\"<string|null>\\\", \\\"timezone_iana\\\": \\\"<string|null>\\\" },\\n  \\\"office_address\\\": \\\"<string|null>\\\",\\n  \\\"services_supported\\\": [\\\"<string>\\\"],\\n  \\\"emergency_definition\\\": [\\\"<string>\\\"],\\n  \\\"emergency_routing_rules\\\": { \\\"primary_contact\\\": {\\\"name\\\": \\\"<string|null>\\\", \\\"phone\\\": \\\"<string|null>\\\"}, \\\"order\\\": [\\\"<string>\\\"], \\\"timeout_seconds\\\": \\\"<number|null>\\\", \\\"fallback\\\": \\\"<string|null>\\\" },\\n  \\\"non_emergency_routing_rules\\\": \\\"<string|null>\\\",\\n  \\\"call_transfer_rules\\\": { \\\"timeout_seconds\\\": \\\"<number|null>\\\", \\\"retries\\\": \\\"<number|null>\\\", \\\"message_if_fails\\\": \\\"<string|null>\\\" },\\n  \\\"integration_constraints\\\": [\\\"<string>\\\"],\\n  \\\"after_hours_flow_summary\\\": \\\"<string|null>\\\",\\n  \\\"office_hours_flow_summary\\\": \\\"<string|null>\\\",\\n  \\\"custom_greeting\\\": \\\"<string|null>\\\",\\n  \\\"ai_disclosure_preference\\\": \\\"<string|null>\\\",\\n  \\\"transfer_hold_message\\\": \\\"<string|null>\\\",\\n  \\\"special_data_capture\\\": [\\\"<string>\\\"],\\n  \\\"questions_or_unknowns\\\": [\\\"<string>\\\"],\\n  \\\"notes\\\": \\\"<string|null>\\\",\\n  \\\"version\\\": \\\"v1\\\",\\n  \\\"source\\\": \\\"demo_call\\\"\\n}\\n\\nReturn ONLY the JSON object. No preamble, no markdown fences.\\n\\nTRANSCRIPT:\\n{{ $json.transcript }}\"\n    }]\n  }],\n  \"generationConfig\": { \"maxOutputTokens\": 2000, \"temperature\": 0.1 }\n}"
+      },
+      "id": "gemini-extract-memo-a",
+      "name": "Gemini: Extract Memo v1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [720, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent?key={{ $env.GEMINI_API_KEY }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [{ "name": "Content-Type", "value": "application/json" }]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"contents\": [{\n    \"parts\": [{\n      \"text\": \"You are extracting UPDATES and CONFIRMATIONS from an onboarding call transcript for a voice AI answering service.\\n\\nExtract ONLY the fields that are NEW, CHANGED, or explicitly CONFIRMED.\\n\\nRULES:\\n- Return a partial JSON with ONLY changed or newly specified fields\\n- NEVER hallucinate\\n- Flag new ambiguities in new_questions\\n\\nEXISTING V1 MEMO:\\n{{ JSON.stringify($json.v1_memo, null, 2) }}\\n\\nReturn a JSON object:\\n{\\n  \\\"updates\\\": { },\\n  \\\"confirmations\\\": [\\\"<field: confirmed unchanged>\\\"],\\n  \\\"new_questions\\\": [\\\"<question>\\\"],\\n  \\\"change_reasons\\\": { \\\"<field>\\\": \\\"<reason>\\\" }\\n}\\n\\nReturn ONLY the JSON object. No preamble, no markdown fences.\\n\\nONBOARDING TRANSCRIPT:\\n{{ $json.transcript }}\"\n    }]\n  }],\n  \"generationConfig\": { \"maxOutputTokens\": 2000, \"temperature\": 0.1 }\n}"
+      },
+      "id": "gemini-extract-updates-b",
+      "name": "Gemini: Extract Updates v2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [720, 700]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse Gemini response and build v1 memo\nconst geminiResp = $input.first().json;\nconst inputData = $('Validate Input A').first().json;\n\n// Gemini response structure: candidates[0].content.parts[0].text\nlet rawText = '';\ntry {\n  rawText = geminiResp.candidates[0].content.parts[0].text;\n} catch(e) {\n  throw new Error('Unexpected Gemini response shape: ' + JSON.stringify(geminiResp).slice(0, 300));\n}\n\n// Strip markdown fences\nif (rawText.includes('```')) {\n  const parts = rawText.split('```');\n  rawText = parts[1] || parts[0];\n  if (rawText.startsWith('json')) rawText = rawText.slice(4);\n}\n\nlet memo;\ntry {\n  memo = JSON.parse(rawText.trim());\n} catch(e) {\n  throw new Error('Failed to parse Gemini memo JSON: ' + e.message + '\\nRaw: ' + rawText.slice(0, 300));\n}\n\nmemo.account_id = inputData.account_id;\nmemo.extracted_at = new Date().toISOString();\nmemo.version = 'v1';\nmemo.source = 'demo_call';\n\nreturn [{ json: { memo, account_id: inputData.account_id } }];"
+      },
+      "id": "build-memo-v1",
+      "name": "Build Memo v1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [960, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse Gemini updates response and merge into v2 memo\nconst geminiResp = $input.first().json;\nconst inputData = $('Validate Input B').first().json;\n\nlet rawText = '';\ntry {\n  rawText = geminiResp.candidates[0].content.parts[0].text;\n} catch(e) {\n  throw new Error('Unexpected Gemini response shape: ' + JSON.stringify(geminiResp).slice(0, 300));\n}\n\nif (rawText.includes('```')) {\n  const parts = rawText.split('```');\n  rawText = parts[1] || parts[0];\n  if (rawText.startsWith('json')) rawText = rawText.slice(4);\n}\n\nlet extraction;\ntry {\n  extraction = JSON.parse(rawText.trim());\n} catch(e) {\n  throw new Error('Failed to parse Gemini updates JSON: ' + e.message);\n}\n\nconst v1_memo = inputData.v1_memo;\nconst updates = extraction.updates || {};\nconst changeReasons = extraction.change_reasons || {};\nconst newQuestions = extraction.new_questions || [];\n\nfunction deepMerge(base, overrides) {\n  const result = JSON.parse(JSON.stringify(base));\n  for (const [key, val] of Object.entries(overrides)) {\n    if (result[key] && typeof result[key] === 'object' && typeof val === 'object' && !Array.isArray(val)) {\n      result[key] = deepMerge(result[key], val);\n    } else if (Array.isArray(val) && Array.isArray(result[key])) {\n      const merged = [...result[key]];\n      for (const item of val) { if (!merged.includes(item)) merged.push(item); }\n      result[key] = merged;\n    } else { result[key] = val; }\n  }\n  return result;\n}\n\nfunction computeDiff(obj1, obj2, path = '') {\n  const changes = [];\n  const keys = new Set([...Object.keys(obj1), ...Object.keys(obj2)]);\n  const skipKeys = new Set(['version', 'source', 'extracted_at']);\n  for (const key of keys) {\n    if (skipKeys.has(key)) continue;\n    const fullPath = path ? `${path}.${key}` : key;\n    if (!(key in obj1)) { changes.push({ field: fullPath, change_type: 'added', old: null, new: obj2[key] }); }\n    else if (!(key in obj2)) { changes.push({ field: fullPath, change_type: 'removed', old: obj1[key], new: null }); }\n    else if (typeof obj1[key] === 'object' && obj1[key] && typeof obj2[key] === 'object' && obj2[key] && !Array.isArray(obj1[key])) { changes.push(...computeDiff(obj1[key], obj2[key], fullPath)); }\n    else if (JSON.stringify(obj1[key]) !== JSON.stringify(obj2[key])) { changes.push({ field: fullPath, change_type: 'modified', old: obj1[key], new: obj2[key] }); }\n  }\n  return changes;\n}\n\nconst v2_memo = deepMerge(v1_memo, updates);\nv2_memo.version = 'v2';\nv2_memo.source = 'onboarding_call';\nv2_memo.extracted_at = new Date().toISOString();\n\nconst existingQ = v2_memo.questions_or_unknowns || [];\nfor (const q of newQuestions) { if (!existingQ.includes(q)) existingQ.push(q); }\nv2_memo.questions_or_unknowns = existingQ;\n\nconst changes = computeDiff(v1_memo, v2_memo);\nfor (const c of changes) { c.reason = changeReasons[c.field] || 'Updated during onboarding call'; }\n\nconst changelog = { account_id: inputData.account_id, generated_at: new Date().toISOString(), v1_source: 'demo_call', v2_source: 'onboarding_call', total_changes: changes.length, changes };\n\nreturn [{ json: { v2_memo, changelog, account_id: inputData.account_id } }];"
+      },
+      "id": "build-memo-v2",
+      "name": "Build Memo v2 + Changelog",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [960, 700]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent?key={{ $env.GEMINI_API_KEY }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [{ "name": "Content-Type", "value": "application/json" }]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"contents\": [{\n    \"parts\": [{\n      \"text\": \"You are an expert voice AI prompt engineer. Generate a complete, production-ready system prompt for a Retell AI voice agent.\\n\\nREQUIREMENTS:\\n- Professional, warm phone manner\\n- Business hours flow: greeting → purpose → collect name+number → transfer → fallback if fails → close\\n- After-hours flow: greeting → determine emergency → emergency branch OR non-emergency branch\\n- NEVER mention internal tools to caller\\n- NEVER volunteer AI identity; if asked use ai_disclosure_preference\\n- ALWAYS collect caller name and phone before any transfer\\n- Use custom_greeting if provided\\n- Reference exact emergency definitions and phone numbers\\n\\nACCOUNT CONFIG:\\n{{ JSON.stringify($json.memo, null, 2) }}\\n\\nGenerate the complete system prompt text only. No JSON wrapper, no markdown.\"\n    }]\n  }],\n  \"generationConfig\": { \"maxOutputTokens\": 3000, \"temperature\": 0.3 }\n}"
+      },
+      "id": "gemini-agent-prompt-a",
+      "name": "Gemini: Generate Agent Prompt v1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1200, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent?key={{ $env.GEMINI_API_KEY }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [{ "name": "Content-Type", "value": "application/json" }]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"contents\": [{\n    \"parts\": [{\n      \"text\": \"You are an expert voice AI prompt engineer. Generate a complete, production-ready v2 system prompt for a Retell AI voice agent based on confirmed onboarding details.\\n\\nREQUIREMENTS:\\n- Professional, warm phone manner\\n- Business hours flow: greeting → purpose → collect name+number → transfer → fallback if fails → close\\n- After-hours flow: greeting → determine emergency → emergency branch OR non-emergency branch\\n- NEVER mention internal tools to caller\\n- NEVER volunteer AI identity; if asked use ai_disclosure_preference\\n- ALWAYS collect caller name and phone before any transfer\\n- Use custom_greeting if provided\\n- Reference exact confirmed emergency definitions and phone numbers\\n\\nACCOUNT CONFIG (v2):\\n{{ JSON.stringify($json.v2_memo, null, 2) }}\\n\\nGenerate the complete system prompt text only. No JSON wrapper, no markdown.\"\n    }]\n  }],\n  \"generationConfig\": { \"maxOutputTokens\": 3000, \"temperature\": 0.3 }\n}"
+      },
+      "id": "gemini-agent-prompt-b",
+      "name": "Gemini: Generate Agent Prompt v2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1200, 700]
+    },
+    {
+      "parameters": {
+        "jsCode": "const geminiResp = $input.first().json;\nconst memoData = $('Build Memo v1').first().json;\n\nlet systemPrompt = '';\ntry { systemPrompt = geminiResp.candidates[0].content.parts[0].text; }\ncatch(e) { throw new Error('Unexpected Gemini prompt response: ' + JSON.stringify(geminiResp).slice(0, 200)); }\n\nconst memo = memoData.memo;\nconst accountId = memoData.account_id;\nconst er = memo.emergency_routing_rules || {};\nconst primary = er.primary_contact || {};\n\nconst agentSpec = {\n  agent_name: `${memo.company_name || 'Company'} - Clara v1`,\n  version: 'v1', voice_style: 'professional, warm, calm',\n  system_prompt: systemPrompt,\n  key_variables: { company_name: memo.company_name, business_hours: memo.business_hours, office_address: memo.office_address, emergency_definitions: memo.emergency_definition || [], primary_emergency_contact: primary, timezone: (memo.business_hours || {}).timezone_iana, custom_greeting: memo.custom_greeting, ai_disclosure: memo.ai_disclosure_preference },\n  tool_invocation_placeholders: [\n    { function: 'transfer_call', description: 'Transfer call to specified phone number', parameters: { phone_number: 'string', reason: 'string' } },\n    { function: 'end_call', description: 'End the call gracefully', parameters: { reason: 'string' } }\n  ],\n  call_transfer_protocol: { primary_number: primary.phone, transfer_order: er.order || [], timeout_seconds: er.timeout_seconds || 30, transfer_hold_message: memo.transfer_hold_message || 'Please hold while I connect you.' },\n  fallback_protocol: { message: er.fallback || 'We are unable to connect you right now. Please leave your name and number.', collect_fields: ['caller_name', 'caller_phone', 'issue_summary'] },\n  generated_at: new Date().toISOString()\n};\n\nconst fs = require('fs');\nconst path = require('path');\nconst outDir = path.join(process.cwd(), 'outputs', 'accounts', accountId, 'v1');\nfs.mkdirSync(outDir, { recursive: true });\nfs.writeFileSync(path.join(outDir, 'account_memo.json'), JSON.stringify(memo, null, 2));\nfs.writeFileSync(path.join(outDir, 'agent_spec.json'), JSON.stringify(agentSpec, null, 2));\n\nreturn [{ json: { status: 'success', account_id: accountId, company_name: memo.company_name, output_dir: outDir, questions_or_unknowns: memo.questions_or_unknowns || [], memo, agent_spec: agentSpec } }];"
+      },
+      "id": "write-outputs-a",
+      "name": "Write v1 Outputs",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1440, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const geminiResp = $input.first().json;\nconst mergeData = $('Build Memo v2 + Changelog').first().json;\n\nlet systemPrompt = '';\ntry { systemPrompt = geminiResp.candidates[0].content.parts[0].text; }\ncatch(e) { throw new Error('Unexpected Gemini prompt response: ' + JSON.stringify(geminiResp).slice(0, 200)); }\n\nconst v2_memo = mergeData.v2_memo;\nconst changelog = mergeData.changelog;\nconst accountId = mergeData.account_id;\nconst er = v2_memo.emergency_routing_rules || {};\nconst primary = er.primary_contact || {};\n\nconst agentSpec = {\n  agent_name: `${v2_memo.company_name || 'Company'} - Clara v2`,\n  version: 'v2', voice_style: 'professional, warm, calm',\n  system_prompt: systemPrompt,\n  key_variables: { company_name: v2_memo.company_name, business_hours: v2_memo.business_hours, office_address: v2_memo.office_address, emergency_definitions: v2_memo.emergency_definition || [], primary_emergency_contact: primary, timezone: (v2_memo.business_hours || {}).timezone_iana, custom_greeting: v2_memo.custom_greeting, ai_disclosure: v2_memo.ai_disclosure_preference },\n  tool_invocation_placeholders: [\n    { function: 'transfer_call', description: 'Transfer call to specified phone number', parameters: { phone_number: 'string', reason: 'string' } },\n    { function: 'end_call', description: 'End the call gracefully', parameters: { reason: 'string' } }\n  ],\n  call_transfer_protocol: { primary_number: primary.phone, transfer_order: er.order || [], timeout_seconds: er.timeout_seconds || 30, transfer_hold_message: v2_memo.transfer_hold_message || 'Please hold while I connect you.' },\n  fallback_protocol: { message: er.fallback || 'We are unable to connect you right now. Please leave your name and number.', collect_fields: ['caller_name', 'caller_phone', 'issue_summary'] },\n  generated_at: new Date().toISOString()\n};\n\nconst changes = changelog.changes || [];\nconst mdLines = [`# Changelog — ${accountId}`, `**Generated:** ${new Date().toUTCString()}`, `**Changes:** ${changes.length} field(s) updated from demo → onboarding`, '', '## Summary of Changes', ''];\nif (changes.length === 0) { mdLines.push('_No changes detected._'); }\nelse { for (const c of changes) { mdLines.push(`### \\`${c.field}\\` (${c.change_type.toUpperCase()})`); mdLines.push(`- **Before:** ${JSON.stringify(c.old)}`); mdLines.push(`- **After:** ${JSON.stringify(c.new)}`); if (c.reason) mdLines.push(`- **Reason:** ${c.reason}`); mdLines.push(''); } }\nconst changelogMd = mdLines.join('\\n');\n\nconst fs = require('fs');\nconst path = require('path');\nconst outDir = path.join(process.cwd(), 'outputs', 'accounts', accountId, 'v2');\nfs.mkdirSync(outDir, { recursive: true });\nfs.writeFileSync(path.join(outDir, 'account_memo.json'), JSON.stringify(v2_memo, null, 2));\nfs.writeFileSync(path.join(outDir, 'agent_spec.json'), JSON.stringify(agentSpec, null, 2));\nfs.writeFileSync(path.join(outDir, 'changelog.json'), JSON.stringify(changelog, null, 2));\nfs.writeFileSync(path.join(outDir, 'changelog.md'), changelogMd);\n\nreturn [{ json: { status: 'success', account_id: accountId, company_name: v2_memo.company_name, output_dir: outDir, total_changes: changelog.total_changes, questions_or_unknowns: v2_memo.questions_or_unknowns || [], v2_memo, agent_spec: agentSpec, changelog } }];"
+      },
+      "id": "write-outputs-b",
+      "name": "Write v2 Outputs",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1440, 700]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify($json) }}"
+      },
+      "id": "respond-a",
+      "name": "Respond: Pipeline A",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1680, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify($json) }}"
+      },
+      "id": "respond-b",
+      "name": "Respond: Pipeline B",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1680, 700]
+    }
+  ],
+  "connections": {
+    "Webhook: Demo Call": { "main": [[{ "node": "Validate Input A", "type": "main", "index": 0 }]] },
+    "Webhook: Onboarding Call": { "main": [[{ "node": "Validate Input B", "type": "main", "index": 0 }]] },
+    "Validate Input A": { "main": [[{ "node": "Gemini: Extract Memo v1", "type": "main", "index": 0 }]] },
+    "Validate Input B": { "main": [[{ "node": "Gemini: Extract Updates v2", "type": "main", "index": 0 }]] },
+    "Gemini: Extract Memo v1": { "main": [[{ "node": "Build Memo v1", "type": "main", "index": 0 }]] },
+    "Gemini: Extract Updates v2": { "main": [[{ "node": "Build Memo v2 + Changelog", "type": "main", "index": 0 }]] },
+    "Build Memo v1": { "main": [[{ "node": "Gemini: Generate Agent Prompt v1", "type": "main", "index": 0 }]] },
+    "Build Memo v2 + Changelog": { "main": [[{ "node": "Gemini: Generate Agent Prompt v2", "type": "main", "index": 0 }]] },
+    "Gemini: Generate Agent Prompt v1": { "main": [[{ "node": "Write v1 Outputs", "type": "main", "index": 0 }]] },
+    "Gemini: Generate Agent Prompt v2": { "main": [[{ "node": "Write v2 Outputs", "type": "main", "index": 0 }]] },
+    "Write v1 Outputs": { "main": [[{ "node": "Respond: Pipeline A", "type": "main", "index": 0 }]] },
+    "Write v2 Outputs": { "main": [[{ "node": "Respond: Pipeline B", "type": "main", "index": 0 }]] }
+  },
+  "active": true,
+  "settings": { "executionOrder": "v1" },
+  "tags": ["clara", "voice-ai", "gemini", "automation"]
+}

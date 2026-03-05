@@ -1,0 +1,28 @@
+DEMO CALL TRANSCRIPT - Account 05
+Date: 2024-01-18
+Company: ShieldPest Solutions
+Sales Rep: Alex
+
+Alex: Tell me about ShieldPest.
+
+Client: We're a pest control company in the Miami, Florida area. Residential and commercial clients. We do general pest control, termites, rodents, bed bugs.
+
+Alex: Business hours?
+
+Client: Monday through Friday, 8am to 6pm. Saturday 9am to 2pm. Eastern time.
+
+Alex: After-hours emergencies?
+
+Client: We don't really have hard emergencies per se. But if someone has a severe infestation they're scared about — like a rodent in a restaurant's kitchen that could get them shut down, or a wasp nest that someone is severely allergic to — those are urgent.
+
+Alex: Routing for urgent calls?
+
+Client: Try our service manager Diana Ruiz at 305-555-8841. 45 second timeout. No second backup, just take a message and promise same-day callback when we open.
+
+Alex: Software?
+
+Client: PestPac.
+
+Alex: Address?
+
+Client: 7200 NW 19th Street, Miami, FL 33126.

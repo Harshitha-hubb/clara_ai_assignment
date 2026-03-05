@@ -1,0 +1,44 @@
+ONBOARDING CALL TRANSCRIPT - Account 01
+Date: 2024-01-22
+Company: FireGuard Pro Services
+Onboarding Rep: Jamie
+
+Jamie: Welcome to your onboarding session FireGuard Pro. Let's confirm all the details from your demo and fill in any gaps.
+
+Client: Sounds good.
+
+Jamie: Business hours — Monday through Friday, 7am to 6pm Central. Still correct?
+
+Client: Actually we added Saturday mornings now. 8am to noon on Saturdays. That was a recent change.
+
+Jamie: Great, updating that. Emergency contacts — we had Marcus Webb at 555-201-4433 as primary and Sandra Kim at 555-201-4434 as backup. Still good?
+
+Client: Marcus is still primary. Sandra moved to a different role. New backup is David Ortiz at 555-201-5521. Same timeout is fine, 30 seconds.
+
+Jamie: For the fallback if both don't answer?
+
+Client: Have the agent say: "We are paging our emergency dispatch team. Please stay on the line or provide your contact information and we will reach you within 15 minutes." Then collect name, number, and the system address.
+
+Jamie: Got it. Any additions to what counts as an emergency?
+
+Client: Add carbon monoxide detector failures to the list. We started handling those too.
+
+Jamie: ServiceTrade still your system?
+
+Client: Yes. One thing we want — if a caller mentions a ServiceTrade job number, have the agent capture that too. It helps us pull up the job faster.
+
+Jamie: Perfect. What should the agent say if someone asks if they're talking to a robot or AI?
+
+Client: Be honest. Say "I'm an AI assistant for FireGuard Pro" and offer to take a message if they prefer to speak with a human.
+
+Jamie: And the greeting — how should the agent open each call?
+
+Client: "Thank you for calling FireGuard Pro Services, your fire and life-safety specialists. How can I assist you today?"
+
+Jamie: Any specific hold music preference or transfer message?
+
+Client: When transferring say: "Please hold while I connect you with our on-call technician." No music preference, whatever default is fine.
+
+Jamie: Timezone confirmed as Central?
+
+Client: Yes, America/Chicago.

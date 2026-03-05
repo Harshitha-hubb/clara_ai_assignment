@@ -1,0 +1,32 @@
+ONBOARDING CALL TRANSCRIPT - Account 08
+Date: 2024-01-26
+Company: PristineClean Commercial
+Onboarding Rep: Jamie
+
+Jamie: Admin hours Monday through Friday 9am to 5pm Central, but 24/7 operations. Confirmed?
+
+Client: Correct. The agent needs to understand we operate 24/7 — it should never say we're closed, just that admin is unavailable.
+
+Jamie: Kevin Park 312-555-9901, no strict timeout?
+
+Client: Update — Kevin moved to regional director. New ops manager is Tonya Griggs at 312-555-9902. She prefers the call ring for 60 seconds before going to message.
+
+Jamie: Greeting?
+
+Client: "Thank you for calling PristineClean Commercial Cleaning. We provide professional cleaning solutions 24 hours a day, 7 days a week. How can I help you?"
+
+Jamie: For emergencies, the agent should collect?
+
+Client: Facility name, contact name, contact number, type of incident, location within the building, and urgency — is it an active situation or scheduled response?
+
+Jamie: Swept still the software?
+
+Client: Yes. They sometimes reference a client account code — capture it if mentioned.
+
+Jamie: AI disclosure?
+
+Client: "I'm PristineClean's virtual receptionist available 24/7." 
+
+Jamie: Timezone America/Chicago?
+
+Client: Correct.

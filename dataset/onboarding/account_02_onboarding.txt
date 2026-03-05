@@ -1,0 +1,40 @@
+ONBOARDING CALL TRANSCRIPT - Account 02
+Date: 2024-01-23
+Company: RapidFlow Plumbing
+Onboarding Rep: Jamie
+
+Jamie: Let's confirm your setup, RapidFlow. Hours were Monday through Saturday, 7am to 7pm Mountain time?
+
+Client: Correct.
+
+Jamie: Emergency contact Rachel Torres at 602-555-0198, fallback Mike Daniels at 602-555-0199, 45 second timeout?
+
+Client: Yes, but we want to add a third fallback. If Mike doesn't answer either, have the agent say "Our emergency line is currently busy. Please call 602-555-FLOW which is our 24/7 answering service."
+
+Jamie: Got it. Any changes to emergency definitions?
+
+Client: Add water heater failure — if someone has no hot water at all, that's an emergency for us now.
+
+Jamie: Custom greeting?
+
+Client: "Thank you for calling RapidFlow Plumbing, Phoenix's trusted plumbing experts. This is Clara, how can I help you today?"
+
+Jamie: So you want the agent to use the name Clara?
+
+Client: Yes please.
+
+Jamie: Transfer hold message?
+
+Client: "One moment while I connect you to our emergency plumber."
+
+Jamie: Any specific questions the agent should ask when taking a non-emergency message?
+
+Client: Name, callback number, best time to call back, and a brief description of the issue. Also ask if they've had this problem before.
+
+Jamie: Housecall Pro still correct for your software?
+
+Client: Yes.
+
+Jamie: Timezone Mountain — is that Arizona so no daylight saving?
+
+Client: Correct, we're in Arizona. America/Phoenix timezone. No DST.

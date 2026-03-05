@@ -1,0 +1,8 @@
+.env
+outputs/accounts/
+outputs/*.log
+outputs/batch_summary.json
+__pycache__/
+*.pyc
+.DS_Store
+n8n_data/

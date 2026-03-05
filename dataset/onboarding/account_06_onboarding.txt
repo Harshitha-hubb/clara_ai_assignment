@@ -1,0 +1,32 @@
+ONBOARDING CALL TRANSCRIPT - Account 06
+Date: 2024-01-25
+Company: SkyHigh Roofing
+Onboarding Rep: Jamie
+
+Jamie: Hours Monday through Friday 7am to 5pm Mountain. Confirmed?
+
+Client: Add Saturday 8am to 1pm — we expanded.
+
+Jamie: Ryan Walsh 720-555-6612 primary, Lisa Park 720-555-6613 backup, 30 seconds?
+
+Client: All correct.
+
+Jamie: Greeting?
+
+Client: "Thank you for calling SkyHigh Roofing, Denver's storm damage specialists. How can I help you?"
+
+Jamie: AI disclosure?
+
+Client: "I'm a virtual assistant for SkyHigh Roofing."
+
+Jamie: After storm events, do you want the agent to capture insurance claim numbers?
+
+Client: Yes! Great point. If a caller mentions an insurance claim, capture the claim number and insurance company name.
+
+Jamie: AccuLynx still?
+
+Client: Yes.
+
+Jamie: Timezone Mountain — America/Denver?
+
+Client: Yes.

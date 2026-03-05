@@ -1,0 +1,32 @@
+DEMO CALL TRANSCRIPT - Account 02
+Date: 2024-01-16
+Company: RapidFlow Plumbing
+Sales Rep: Alex
+
+Alex: Tell me about RapidFlow Plumbing.
+
+Client: We're a residential and light commercial plumbing company. Serving the Phoenix metro area. About 12 techs on staff.
+
+Alex: Business hours?
+
+Client: Monday through Saturday, 7am to 7pm. Mountain time.
+
+Alex: What are your emergency scenarios?
+
+Client: Burst pipes, active flooding, sewer backups into living areas, no hot water in winter for elderly clients, gas line leaks — those are all emergencies.
+
+Alex: How do you handle emergency routing?
+
+Client: We have an emergency dispatcher, Rachel Torres, at 602-555-0198. She coordinates the on-call tech. Timeout should be 45 seconds. If she doesn't answer, try the owner Mike Daniels at 602-555-0199.
+
+Alex: Non-emergency after-hours?
+
+Client: Collect name, number, issue description, and ask if it's okay to call them back after 7am next business day.
+
+Alex: Any software?
+
+Client: We use Housecall Pro for scheduling. Same thing — agent doesn't create jobs, just collects info.
+
+Alex: Address?
+
+Client: 2290 West Camelback Road, Phoenix, AZ 85015.

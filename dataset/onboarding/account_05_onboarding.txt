@@ -1,0 +1,28 @@
+ONBOARDING CALL TRANSCRIPT - Account 05
+Date: 2024-01-25
+Company: ShieldPest Solutions
+Onboarding Rep: Jamie
+
+Jamie: Hours Monday through Friday 8am to 6pm, Saturday 9am to 2pm Eastern. Confirmed?
+
+Client: Yes. Actually extend Saturday to 4pm — we added more routes.
+
+Jamie: Updated to Saturday 9am to 4pm. Diana Ruiz 305-555-8841, 45 second timeout, no second backup?
+
+Client: Add a backup. If Diana doesn't answer, try service coordinator Anthony Bell at 305-555-8842.
+
+Jamie: Greeting?
+
+Client: "Thank you for calling ShieldPest Solutions, Miami's pest control experts. How can I help you today?"
+
+Jamie: For non-emergency after-hours messages, any specific questions?
+
+Client: Name, number, type of pest if they know it, location in home or business, and urgency level they'd describe it as.
+
+Jamie: PestPac still the software?
+
+Client: Yes.
+
+Jamie: AI disclosure?
+
+Client: Just say "I'm ShieldPest's virtual assistant" — keep it simple.

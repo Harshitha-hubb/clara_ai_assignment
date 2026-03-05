@@ -1,0 +1,46 @@
+services:
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: clara-n8n
+    restart: unless-stopped
+    ports:
+      - "5678:5678"
+    environment:
+      # ── Core Settings ────────────────────────────────────────────────
+      - N8N_HOST=localhost
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+      - WEBHOOK_URL=http://localhost:5678/
+
+      # ── Auth (change these!) ─────────────────────────────────────────
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=admin
+      - N8N_BASIC_AUTH_PASSWORD=clarapassword123
+
+      # ── Timezone ─────────────────────────────────────────────────────
+      - GENERIC_TIMEZONE=America/Chicago
+      - TZ=America/Chicago
+
+      # ── API Keys (pass your Gemini key here) ─────────────────────────
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+
+      # ── Execution Settings ────────────────────────────────────────────
+      - EXECUTIONS_PROCESS=main
+      - N8N_LOG_LEVEL=info
+
+      # ── Node Function Allow ──────────────────────────────────────────
+      - NODE_FUNCTION_ALLOW_BUILTIN=fs,path
+      - NODE_FUNCTION_ALLOW_EXTERNAL=*
+
+    volumes:
+      # n8n data persistence
+      - n8n_data:/home/node/.n8n
+      # Mount project directory so n8n can write outputs
+      - ./outputs:/home/node/outputs
+      - ./dataset:/home/node/dataset
+
+    working_dir: /home/node
+
+volumes:
+  n8n_data:
+    driver: local

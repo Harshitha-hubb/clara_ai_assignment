@@ -1,0 +1,52 @@
+[
+  {
+    "demo": "./dataset/demo/account_01_demo.txt",
+    "onboarding": "./dataset/onboarding/account_01_onboarding.txt",
+    "account_id": "acct_fire001"
+  },
+  {
+    "demo": "./dataset/demo/account_02_demo.txt",
+    "onboarding": "./dataset/onboarding/account_02_onboarding.txt",
+    "account_id": "acct_plumb002"
+  },
+  {
+    "demo": "./dataset/demo/account_03_demo.txt",
+    "onboarding": "./dataset/onboarding/account_03_onboarding.txt",
+    "account_id": "acct_hvac003"
+  },
+  {
+    "demo": "./dataset/demo/account_04_demo.txt",
+    "onboarding": "./dataset/onboarding/account_04_onboarding.txt",
+    "account_id": "acct_elec004"
+  },
+  {
+    "demo": "./dataset/demo/account_05_demo.txt",
+    "onboarding": "./dataset/onboarding/account_05_onboarding.txt",
+    "account_id": "acct_pest005"
+  },
+  {
+    "demo": "./dataset/demo/account_06_demo.txt",
+    "onboarding": "./dataset/onboarding/account_06_onboarding.txt",
+    "account_id": "acct_roof006"
+  },
+  {
+    "demo": "./dataset/demo/account_07_demo.txt",
+    "onboarding": "./dataset/onboarding/account_07_onboarding.txt",
+    "account_id": "acct_land007"
+  },
+  {
+    "demo": "./dataset/demo/account_08_demo.txt",
+    "onboarding": "./dataset/onboarding/account_08_onboarding.txt",
+    "account_id": "acct_clean008"
+  },
+  {
+    "demo": "./dataset/demo/account_09_demo.txt",
+    "onboarding": "./dataset/onboarding/account_09_onboarding.txt",
+    "account_id": "acct_pool009"
+  },
+  {
+    "demo": "./dataset/demo/account_10_demo.txt",
+    "onboarding": "./dataset/onboarding/account_10_onboarding.txt",
+    "account_id": "acct_garage010"
+  }
+]

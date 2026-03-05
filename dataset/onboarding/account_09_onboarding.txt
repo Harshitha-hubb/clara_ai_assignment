@@ -1,0 +1,32 @@
+ONBOARDING CALL TRANSCRIPT - Account 09
+Date: 2024-01-27
+Company: AquaClear Pool Services
+Onboarding Rep: Jamie
+
+Jamie: Hours Monday through Friday 7am to 5pm, Saturday 8am to noon Pacific. Confirmed?
+
+Client: Yes.
+
+Jamie: Jake Torres 619-555-4421 primary, Sandra Wells 619-555-4422 backup, 30 seconds?
+
+Client: Jake moved on. Primary is now Danny Reyes at 619-555-4423. Sandra still backup.
+
+Jamie: Greeting?
+
+Client: "Thank you for calling AquaClear Pool Services, San Diego's pool care experts. How can I assist you today?"
+
+Jamie: Any special data collection?
+
+Client: Clients usually have a route number. If they mention it, capture it. Also capture pool address if different from billing address.
+
+Jamie: Skimmer still?
+
+Client: Yes.
+
+Jamie: AI disclosure?
+
+Client: "I'm a virtual assistant for AquaClear." Keep it brief.
+
+Jamie: Timezone America/Los_Angeles?
+
+Client: Yes.

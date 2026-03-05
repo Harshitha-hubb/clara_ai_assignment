@@ -1,0 +1,32 @@
+ONBOARDING CALL TRANSCRIPT - Account 04
+Date: 2024-01-24
+Company: Voltage Masters Electric
+Onboarding Rep: Jamie
+
+Jamie: Hours 7:30am to 5:30pm Pacific, Monday through Friday. Confirmed?
+
+Client: Yes. We're also going to start taking calls Saturday 8am to noon starting next month. Can we set that up now?
+
+Jamie: Absolutely. Saturday 8am to noon Pacific added. Emergency contacts — Tommy Park 206-555-3310 primary, Greg Larson 206-555-3311 backup?
+
+Client: Greg moved to semi-retirement. New backup is our lead electrician Dana Cho at 206-555-3312. 30 second timeout still.
+
+Jamie: Fallback message if neither answers?
+
+Client: "We are dispatching an electrician and will contact you within 60 minutes. Please stay in a safe location away from any electrical hazards."
+
+Jamie: Greeting?
+
+Client: "Thank you for calling Voltage Masters Electric. For electrical emergencies, stay safe first. How can I assist you today?"
+
+Jamie: ServiceTrade still?
+
+Client: Yes. Capture any permit numbers customers mention — helps us pull records fast.
+
+Jamie: AI disclosure?
+
+Client: "I'm an AI assistant helping Voltage Masters Electric." Be honest.
+
+Jamie: Timezone America/Los_Angeles?
+
+Client: Yes.

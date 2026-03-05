@@ -1,0 +1,36 @@
+DEMO CALL TRANSCRIPT - Account 01
+Date: 2024-01-15
+Company: FireGuard Pro Services
+Sales Rep: Alex
+
+Alex: Hi, thanks for joining the demo today. Can you tell me a bit about your business?
+
+Client: Sure, we're FireGuard Pro Services. We do fire suppression system installations, inspections, and emergency repairs. Mostly commercial clients — restaurants, office buildings, warehouses.
+
+Alex: Great. And what are your business hours?
+
+Client: We're open Monday through Friday, 7am to 6pm. Central time. We're closed weekends normally but we do have an emergency line.
+
+Alex: Perfect. What kinds of calls come in after hours that you'd consider emergencies?
+
+Client: Fire suppression system failures, active alarms triggering incorrectly, sprinkler head damage causing flooding, any life-safety issue basically. If a building's fire system is down, that's an emergency.
+
+Alex: And how do you route those emergency calls?
+
+Client: We have an on-call technician. The agent should try to reach Marcus Webb first at 555-201-4433. If he doesn't answer in 30 seconds, try the backup tech Sandra Kim at 555-201-4434. If neither answers, tell the caller we're paging our emergency dispatch and collect their info.
+
+Alex: What about non-emergency after-hours calls?
+
+Client: Take a message, tell them we'll call back next business day. Collect name, number, and a brief description of what they need.
+
+Alex: Do you use any field management software?
+
+Client: Yes, ServiceTrade. All job scheduling and work orders go through there. The agent shouldn't try to create tickets, just collect info and we'll enter it manually.
+
+Alex: What's your office address?
+
+Client: 4821 Industrial Parkway, Suite 100, Dallas, TX 75201.
+
+Alex: Anything else you want the agent to handle specifically?
+
+Client: Inspection reminder calls — we send those out ourselves so the agent doesn't need to handle outbound. Just inbound.
